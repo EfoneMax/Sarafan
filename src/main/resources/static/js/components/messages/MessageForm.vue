@@ -6,14 +6,9 @@
 </template>
 
 <script>
-    function getIndex(list, id) {
-        for (var i = 0; i < list.length; i++ ) {
-            if (list[i].id === id) {
-                return i
-            }
-        }
-        return -1
-    }
+    import {sendMessage} from "../../utils/ws";
+
+
     export default {
         props: ['messages', 'messageAttr'],
         data() {
@@ -29,7 +24,12 @@
             }
         },
         methods: {
-            save() {
+              save() {
+                  sendMessage({id: this.id, text: this.text})
+                  his.text = ''
+                  this.id = ''
+              }
+/*            save() {
                 const message = { text: this.text }
                 if (this.id) {
                     this.$resource('/message{/id}').update({id: this.id}, message).then(result =>
@@ -48,7 +48,7 @@
                         })
                     )
                 }
-            }
+            }*/
         }
     }
 </script>
