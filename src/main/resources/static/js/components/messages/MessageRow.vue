@@ -1,11 +1,17 @@
 
 <template>
     <div>
-        <i>({{ message.id }})</i> {{ message.text }}
-        <span style="position: absolute; right: 0">
-            <input type="button" value="Edit" @click="edit" />
-            <input type="button" value="X" @click="del" />
-        </span>
+        <v-card class="my-2">
+            <v-card-title primary-title>
+                <i>({{ message.id }})</i> {{ message.text }}
+            </v-card-title>
+            <v-card-actions>
+                <v-btn small rounded text="" click="edit">Edit</v-btn>
+                <v-btn small icon @click="del">
+                    <v-icon>delete</v-icon>
+                </v-btn>
+            </v-card-actions>
+        </v-card>
     </div>
 </template>
 
