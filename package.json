@@ -10,6 +10,7 @@
     "start": "webpack-dev-server"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.7.0",
     "@mdi/js": "^4.7.95",
     "@stomp/stompjs": "^5.4.2",
     "material-design-icons-iconfont": "^5.0.1",
@@ -17,7 +18,8 @@
     "vue": "^2.6.11",
     "vue-resource": "^1.5.1",
     "vue-template-compiler": "^2.6.11",
-    "vuetify": "^2.2.1"
+    "vuetify": "^2.2.1",
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",

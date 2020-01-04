@@ -1,29 +1,29 @@
-
 <template>
-    <div>
-        <v-card class="my-2">
-            <v-card-title primary-title>
-                <i>({{ message.id }})</i> {{ message.text }}
-            </v-card-title>
-            <v-card-actions>
-                <v-btn small rounded text="" click="edit">Edit</v-btn>
-                <v-btn small icon @click="del">
-                    <v-icon>delete</v-icon>
-                </v-btn>
-            </v-card-actions>
-        </v-card>
-    </div>
+    <v-card class="my-2">
+        <v-card-text primary-title>
+            <i>({{ message.id }})</i>
+            {{ message.text }}
+        </v-card-text>
+        <v-card-actions>
+            <v-btn value="Edit" @click="edit" small text rounded>Edit</v-btn>
+            <v-btn icon @click="del" small>
+                <v-icon>delete</v-icon>
+            </v-btn>
+        </v-card-actions>
+    </v-card>
 </template>
 
 <script>
+    import { mapActions } from 'vuex'
     export default {
-        props: ['message', 'editMessage', 'deleteMessage', 'messages'],
+        props: ['message', 'editMessage'],
         methods: {
+            ...mapActions(['removeMessageAction']),
             edit() {
                 this.editMessage(this.message)
             },
             del() {
-                this.deleteMessage(this.message)
+                this.removeMessageAction(this.message)
             }
         }
     }
