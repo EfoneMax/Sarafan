@@ -18,8 +18,6 @@
                 let parts = this.src.split('/');
                 let lastPart = parts[parts.length - 1].replace('watch?v=', '');
                 return 'https://www.youtube.com/embed/' + lastPart
-
-
             }
         }
     }
